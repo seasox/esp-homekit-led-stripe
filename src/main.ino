@@ -92,6 +92,7 @@ void setup() {
 	Serial.begin(115200);
 	Serial.setRxBufferSize(32);
 	Serial.setDebugOutput(false);
+	while (!Serial) {}
 	SPI.begin();
 	SPI.setBitOrder(MSBFIRST);
 	pinMode(PIN_LED, OUTPUT);

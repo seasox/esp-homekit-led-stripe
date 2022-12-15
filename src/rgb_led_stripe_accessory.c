@@ -17,10 +17,7 @@
 
 //const char * buildTime = __DATE__ " " __TIME__ " GMT";
 
-#define ACCESSORY_NAME  ("ESP8266_LED")
-#define ACCESSORY_SN  ("SN_0123456")  //SERIAL_NUMBER
-#define ACCESSORY_MANUFACTURER ("Arduino Homekit")
-#define ACCESSORY_MODEL  ("ESP8266")
+#include "homekit_config.h"
 
 extern int leds_bri; //[0, 100]
 extern bool leds_power; //true or false
@@ -144,7 +141,7 @@ homekit_accessory_t *accessories[] =
 
 homekit_server_config_t config = {
 		.accessories = accessories,
-		.password = "111-11-111",
+		.password = ACCESSORY_PASSWORD,
 		//.on_event = on_homekit_event,
 		.setupId = "ABCD"
 };
